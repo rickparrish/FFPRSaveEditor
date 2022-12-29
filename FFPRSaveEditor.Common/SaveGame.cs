@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FFPRSaveEditor.Common.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Modes;
@@ -91,15 +92,15 @@ namespace FFPRSaveEditor.Common
                 if (jsonData.Contains("userData", StringComparison.OrdinalIgnoreCase)) {
                     var reStringifieds = new List<string>();
                     try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<Models.FF1Models.SaveGame>(result))));
+                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF1SaveGame>(result))));
                     } catch {
                     }
                     try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<Models.FF4Models.SaveGame>(result))));
+                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF4SaveGame>(result))));
                     } catch {
                     }
                     try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<Models.FF6Models.SaveGame>(result))));
+                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF6SaveGame>(result))));
                     } catch {
                     }
                     if (!reStringifieds.Any(x => x == jsonData)) {

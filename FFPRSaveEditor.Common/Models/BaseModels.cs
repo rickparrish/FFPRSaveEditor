@@ -1,4 +1,4 @@
-﻿namespace FFPRSaveEditor.Common.Models.BaseModels {
+﻿namespace FFPRSaveEditor.Common.Models {
     public class AbilityDictionary {
         public List<int> keys { get; set; }
         public List<AbilityDictionary_Value> values { get; set; }
@@ -58,6 +58,32 @@
     public class AddtionalMaxMpCountList {
         public List<int> keys { get; set; }
         public List<int> values { get; set; }
+    }
+
+    public class BaseSaveGame {
+        public virtual int id { get; set; }
+        public virtual string pictureData { get; set; }
+        // public virtual UserData userData { get; set; }
+        public virtual ConfigData configData { get; set; }
+        public virtual DataStorage dataStorage { get; set; }
+        // public virtual MapData mapData { get; set; }
+        public virtual string timeStamp { get; set; }
+        public virtual decimal playTime { get; set; }
+        public virtual int clearFlag { get; set; }
+        public virtual int isCompleteFlag { get; set; }
+    }
+
+    public class BaseSaveGame2 {
+        public virtual int id { get; set; }
+        public virtual string pictureData { get; set; }
+        public virtual UserData userData { get; set; }
+        public virtual ConfigData configData { get; set; }
+        public virtual DataStorage dataStorage { get; set; }
+        public virtual MapData2 mapData { get; set; }
+        public virtual string timeStamp { get; set; }
+        public virtual decimal playTime { get; set; }
+        public virtual int clearFlag { get; set; }
+        public virtual int isCompleteFlag { get; set; }
     }
 
     public class CommandList {
@@ -323,32 +349,6 @@
 
     public class ReleasedJobs {
         public List<int> target { get; set; }
-    }
-
-    public class SaveGame {
-        public virtual int id { get; set; }
-        public virtual string pictureData { get; set; }
-        // public virtual UserData userData { get; set; }
-        public virtual ConfigData configData { get; set; }
-        public virtual DataStorage dataStorage { get; set; }
-        // public virtual MapData mapData { get; set; }
-        public virtual string timeStamp { get; set; }
-        public virtual decimal playTime { get; set; }
-        public virtual int clearFlag { get; set; }
-        public virtual int isCompleteFlag { get; set; }
-    }
-
-    public class SaveGame2 {
-        public virtual int id { get; set; }
-        public virtual string pictureData { get; set; }
-        public virtual UserData userData { get; set; }
-        public virtual ConfigData configData { get; set; }
-        public virtual DataStorage dataStorage { get; set; }
-        public virtual MapData2 mapData { get; set; }
-        public virtual string timeStamp { get; set; }
-        public virtual decimal playTime { get; set; }
-        public virtual int clearFlag { get; set; }
-        public virtual int isCompleteFlag { get; set; }
     }
 
     public class SkillLevelTargets {
