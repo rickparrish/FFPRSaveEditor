@@ -81,20 +81,25 @@ namespace FFPRSaveEditor.Common
             var cipher = new PaddedBufferedBlockCipher(blockCipher, new ZeroBytePadding());
             var parameters = new ParametersWithIV(new KeyParameter(generator.GetBytes(32)), generator.GetBytes(32));
 
-            byte[] encryptedJSONData = new byte[cipher.GetOutputSize(compressedJSONData.Length)];
+            // GetOutputSize sometimes returns a size that is 32 bytes too small, so we add 32 to the size it returns.
+            // Seems to happen on files that are exact multiples of the 32 byte block size, and this SO answer indicates
+            // that BouncyCastle adds a block full of zeros in such cases.  So maybe GetOutputSize doesn't account for
+            // that extra block of zeros?  See: https://stackoverflow.com/a/63737775/342378
+            byte[] encryptedJSONData = new byte[cipher.GetOutputSize(compressedJSONData.Length) + 32];
 
+            int bytesProcessed = 0;
             try
             {
                 cipher.Init(true, parameters);
-                int bytesProcessed = cipher.ProcessBytes(compressedJSONData, encryptedJSONData, 0);
-                cipher.DoFinal(encryptedJSONData, bytesProcessed);
+                bytesProcessed = cipher.ProcessBytes(compressedJSONData, encryptedJSONData, 0);
+                bytesProcessed += cipher.DoFinal(encryptedJSONData, bytesProcessed);
             }
             catch (Exception)
             {
                 throw new Exception("Failed to encrypt stream!");
             }
 
-            return Convert.ToBase64String(encryptedJSONData);
+            return Convert.ToBase64String(encryptedJSONData, 0, bytesProcessed);
         }
     }
 }
