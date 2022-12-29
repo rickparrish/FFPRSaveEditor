@@ -16,6 +16,13 @@ namespace FFPRSaveEditor.Common
         static readonly string Password = "TKX73OHHK1qMonoICbpVT0hIDGe7SkW0";
         static readonly string Saltword = "71Ba2p0ULBGaE6oJ7TjCqwsls1jBKmRL";
 
+        static SaveGame() {
+            // Set float parser to use Decimal, because default setting of Double doesn't handle all 'playTime' values correctly
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings {
+                FloatParseHandling = FloatParseHandling.Decimal
+            };
+        }
+
         public static string Decrypt(string jsonData)
         {
             byte[] decodedJSONData = Convert.FromBase64String(jsonData);
