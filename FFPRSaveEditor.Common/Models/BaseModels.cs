@@ -214,7 +214,10 @@
         public virtual int subtractSteps { get; set; }
         public virtual string telepoCacheData { get; set; }
         public virtual int playableCharacterCorpsId { get; set; }
-        public virtual string timerData { get; set; }
+        // TODOX In FF5 the timerData property is a List<TimerData>, but for all other games it is an empty string.
+        //       So for now object is used to ensure things deserialize for all games, but it means hoops will
+        //       need to be jumped through to edit timer data (whatever it is) in FF5.
+        public virtual object timerData { get; set; }
     }
 
     public class MapData2 {
@@ -229,7 +232,7 @@
         public virtual int subtractSteps { get; set; }
         public virtual string telepoCacheData { get; set; }
         public virtual int playableCharacterCorpsId { get; set; }
-        public virtual string timerData { get; set; }
+        public virtual object timerData { get; set; }
     }
 
     public class NormalOwnedItemList {

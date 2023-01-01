@@ -22,7 +22,7 @@
         public override int subtractSteps { get; set; }
         public override string telepoCacheData { get; set; }
         public override int playableCharacterCorpsId { get; set; }
-        public override string timerData { get; set; }
+        public override object timerData { get; set; }
     }
 
     // Compared to BaseModel.SaveGame: Add userData and mapData properties

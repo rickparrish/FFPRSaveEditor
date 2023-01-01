@@ -96,7 +96,19 @@ namespace FFPRSaveEditor.Common
                     } catch {
                     }
                     try {
+                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF2SaveGame>(result))));
+                    } catch {
+                    }
+                    try {
+                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF3SaveGame>(result))));
+                    } catch {
+                    }
+                    try {
                         reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF4SaveGame>(result))));
+                    } catch {
+                    }
+                    try {
+                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF5SaveGame>(result))));
                     } catch {
                     }
                     try {

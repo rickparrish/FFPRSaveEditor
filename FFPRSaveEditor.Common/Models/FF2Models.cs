@@ -1,6 +1,6 @@
 ﻿namespace FFPRSaveEditor.Common.Models {
     // Compared to BaseModel.MapData: Add gpsData property
-    public class FF1MapData : MapData {
+    public class FF2MapData : MapData {
         public override int mapId { get; set; }
         public override int pointIn { get; set; }
         public override int transportationId { get; set; }
@@ -16,13 +16,13 @@
     }
 
     // Compared to BaseModel.SaveGame: Add userData and mapData properties
-    public class FF1SaveGame : BaseSaveGame {
+    public class FF2SaveGame : BaseSaveGame {
         public override int id { get; set; }
         public override string pictureData { get; set; }
         public UserData userData { get; set; }
         public override ConfigData configData { get; set; }
         public override DataStorage dataStorage { get; set; }
-        public FF1MapData mapData { get; set; }
+        public FF2MapData mapData { get; set; }
         public override string timeStamp { get; set; }
         public override decimal playTime { get; set; }
         public override int clearFlag { get; set; }

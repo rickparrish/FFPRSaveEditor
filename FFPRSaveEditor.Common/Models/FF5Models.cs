@@ -1,64 +1,50 @@
 ﻿namespace FFPRSaveEditor.Common.Models {
-    // Compared to BaseModel.GpsData: Add transportationId property
-    public class FF6GpsData : GpsData {
-        public int transportationId { get; set; }
-        public override int mapId { get; set; }
-        public override int areaId { get; set; }
-        public override int gpsId { get; set; }
-        public override int width { get; set; }
-        public override int height { get; set; }
-    }
-
-    // Compared to BaseModel.MapData: Add gpsData, currentSelectedPartyId, viewType, otherPartyDataList, partyPlayableCharacterCorpsId,
-    //                                    fieldDefenseNpcEntityIDList, beastFieldEncountExchangeFlags, beastFieldEncountSeekGroupId, rtsData properties
-    public class FF6MapData : MapData {
+    // Compared to BaseModel.MapData: Add gpsData and viewType properties
+    public class FF5MapData : MapData {
         public override int mapId { get; set; }
         public override int pointIn { get; set; }
         public override int transportationId { get; set; }
         public override bool carryingHoverShip { get; set; }
         public override PlayerEntity playerEntity { get; set; }
         public override string companionEntity { get; set; }
-        public FF6GpsData gpsData { get; set; }
+        public GpsData gpsData { get; set; }
         public override int moveCount { get; set; }
         public override int subtractSteps { get; set; }
         public override string telepoCacheData { get; set; }
         public override int playableCharacterCorpsId { get; set; }
-        public int currentSelectedPartyId { get; set; }
+        // TODOX See note in BaseModels regarding timerData type.
+        // public override TimerData timerData { get; set; }
         public override object timerData { get; set; }
         public int viewType { get; set; }
-        public List<FF6OtherPartyDataList> otherPartyDataList { get; set; }
-        public List<int> partyPlayableCharacterCorpsId { get; set; }
-        public List<int> fieldDefenseNpcEntityIDList { get; set; }
-        public List<int> beastFieldEncountExchangeFlags { get; set; }
-        public int beastFieldEncountSeekGroupId { get; set; }
-        public string rtsData { get; set; }
-
     }
 
-    // New class for FF6
-    public class FF6OtherPartyDataList {
-        public int mapId { get; set; }
-        public int pointIn { get; set; }
-        public string playerEntity { get; set; }
-        public int playableCharacterCorpsId { get; set; }
+    // New class for FF5, although not currently used because other games have the timerData property as a string.
+    // See note in BaseModels for more information.
+    public class TimerData {
+        public double requiredSeconds { get; set; }
+        public double elapsedSeconds { get; set; }
+        public List<int> updateStateList { get; set; }
+        public List<string> scriptNameList { get; set; }
+        public bool isDisplayUI { get; set; }
     }
 
     // Compared to BaseModel.SaveGame: Add userData and mapData properties
-    public class FF6SaveGame : BaseSaveGame {
+    public class FF5SaveGame : BaseSaveGame {
         public override int id { get; set; }
         public override string pictureData { get; set; }
-        public FF6UserData userData { get; set; }
+        public FF5UserData userData { get; set; }
         public override ConfigData configData { get; set; }
         public override DataStorage dataStorage { get; set; }
-        public FF6MapData mapData { get; set; }
+        public FF5MapData mapData { get; set; }
         public override string timeStamp { get; set; }
         public override decimal playTime { get; set; }
         public override int clearFlag { get; set; }
         public override int isCompleteFlag { get; set; }
     }
 
-    // Compared to BaseModel.UserData: Add totalGil property
-    public class FF6UserData : UserData {
+    // Compared to BaseModel.UserData: Add winCount, totalGil, wonderWandIndex, braveBladeReliefCount,
+    //                                 braveBladeEscapeCount, and isTakeOverBraveBladeEscapeCount properties
+    public class FF5UserData : UserData {
         public override CorpsList corpsList { get; set; }
         public override CorpsSlots corpsSlots { get; set; }
         public override OwnedCharacterList ownedCharacterList { get; set; }
@@ -79,6 +65,7 @@
         public override LearnedAbilityList learnedAbilityList { get; set; }
         public override int escapeCount { get; set; }
         public override int battleCount { get; set; }
+        public int winCount { get; set; }
         public override int corpsSlotIndex { get; set; }
         public override int openChestCount { get; set; }
         public override OwnedMagicStoneList ownedMagicStoneList { get; set; }
@@ -86,5 +73,9 @@
         public override int saveCompleteCount { get; set; }
         public override int monstersKilledCount { get; set; }
         public int totalGil { get; set; }
+        public int wonderWandIndex { get; set; }
+        public int braveBladeReliefCount { get; set; }
+        public int braveBladeEscapeCount { get; set; }
+        public bool isTakeOverBraveBladeEscapeCount { get; set; }
     }
 }
