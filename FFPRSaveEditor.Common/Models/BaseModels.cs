@@ -176,12 +176,7 @@
     }
 
     public class ImportantOwendItemList {
-        public List<ImportantOwendItemList_Target> target { get; set; }
-    }
-
-    public class ImportantOwendItemList_Target {
-        public int contentId { get; set; }
-        public int count { get; set; }
+        public List<OwnedItemList_Target> target { get; set; }
     }
 
     public class JobList {
@@ -236,12 +231,7 @@
     }
 
     public class NormalOwnedItemList {
-        public List<NormalOwnedItemList_Target> target { get; set; }
-    }
-
-    public class NormalOwnedItemList_Target {
-        public int contentId { get; set; }
-        public int count { get; set; }
+        public List<OwnedItemList_Target> target { get; set; }
     }
 
     public class NormalOwnedItemSortIdList {
@@ -279,6 +269,11 @@
         public int ownedMonsterId { get; set; }
         public int magicStoneId { get; set; }
         public int magicLearningValue { get; set; }
+    }
+
+    public class OwnedItemList_Target {
+        public int contentId { get; set; }
+        public int count { get; set; }
     }
 
     public class OwnedKeyWaordList {
