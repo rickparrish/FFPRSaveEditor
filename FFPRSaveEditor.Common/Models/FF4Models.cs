@@ -16,7 +16,7 @@
         public override int transportationId { get; set; }
         public override bool carryingHoverShip { get; set; }
         public override PlayerEntity playerEntity { get; set; }
-        public override string companionEntity { get; set; }
+        public override object companionEntity { get; set; }
         public FF4GpsData gpsData { get; set; }
         public override int moveCount { get; set; }
         public override int subtractSteps { get; set; }

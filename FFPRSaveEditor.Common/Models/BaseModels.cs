@@ -90,6 +90,14 @@
         public List<int> target { get; set; }
     }
 
+    public class CompanionEntity {
+        public Position position { get; set; }
+        public int direction { get; set; }
+        public int fieldCharacterAssetId { get; set; }
+        public int scriptId { get; set; }
+        public List<object> conditionTypeList { get; set; }
+    }
+
     public class ConfigData {
         public int buttonType { get; set; }
         public int battleModeIndex { get; set; }
@@ -203,13 +211,17 @@
         public virtual int transportationId { get; set; }
         public virtual bool carryingHoverShip { get; set; }
         public virtual PlayerEntity playerEntity { get; set; }
-        public virtual string companionEntity { get; set; }
+        // TODOX In most of my saves companionEntity is an empty string, but in one of my FF3 saves it
+        //       is an object.  I think this is from when you're escorting an NPC, which is why it's only
+        //       coming up in one of my saves.  So for now object is used instead of CompanionEntity to
+        //       ensure things deserialize for all games.
+        public virtual object companionEntity { get; set; }
         // public virtual GpsData gpsData { get; set; }
         public virtual int moveCount { get; set; }
         public virtual int subtractSteps { get; set; }
         public virtual string telepoCacheData { get; set; }
         public virtual int playableCharacterCorpsId { get; set; }
-        // TODOX In FF5 the timerData property is a List<TimerData>, but for all other games it is an empty string.
+        // TODOX In FF5 the timerData property is a TimerData, but for all other games it is an empty string.
         //       So for now object is used to ensure things deserialize for all games, but it means hoops will
         //       need to be jumped through to edit timer data (whatever it is) in FF5.
         public virtual object timerData { get; set; }
@@ -221,7 +233,11 @@
         public virtual int transportationId { get; set; }
         public virtual bool carryingHoverShip { get; set; }
         public virtual PlayerEntity playerEntity { get; set; }
-        public virtual string companionEntity { get; set; }
+        // TODOX In most of my saves companionEntity is an empty string, but in one of my FF3 saves it
+        //       is an object.  I think this is from when you're escorting an NPC, which is why it's only
+        //       coming up in one of my saves.  So for now object is used instead of CompanionEntity to
+        //       ensure things deserialize for all games.
+        public virtual object companionEntity { get; set; }
         public virtual GpsData gpsData { get; set; }
         public virtual int moveCount { get; set; }
         public virtual int subtractSteps { get; set; }
