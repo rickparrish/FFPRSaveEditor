@@ -93,27 +93,33 @@ namespace FFPRSaveEditor.Common
                     var reStringifieds = new List<string>();
                     try {
                         reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF1SaveGame>(result))));
-                    } catch {
+                    } catch (Exception ex) {
+                        int break1 = 0;
                     }
                     try {
                         reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF2SaveGame>(result))));
-                    } catch {
+                    } catch (Exception ex) {
+                        int break2 = 0;
                     }
                     try {
                         reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF3SaveGame>(result))));
-                    } catch {
+                    } catch (Exception ex) {
+                        int break3 = 0;
                     }
                     try {
                         reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF4SaveGame>(result))));
-                    } catch {
+                    } catch (Exception ex) {
+                        int break4 = 0;
                     }
                     try {
                         reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF5SaveGame>(result))));
-                    } catch {
+                    } catch (Exception ex) {
+                        int break5 = 0;
                     }
                     try {
                         reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF6SaveGame>(result))));
-                    } catch {
+                    } catch (Exception ex) {
+                        int break6 = 0;
                     }
                     if (!reStringifieds.Any(x => x == jsonData)) {
                         throw new Exception("Re-stringified json does not match input jsonData");
