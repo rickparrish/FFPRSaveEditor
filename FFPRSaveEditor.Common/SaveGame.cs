@@ -24,7 +24,7 @@ namespace FFPRSaveEditor.Common
             };
         }
 
-        public static string Decrypt(string jsonData)
+        public static string Decrypt(string jsonData, bool verify)
         {
             byte[] decodedJSONData = Convert.FromBase64String(jsonData);
 
@@ -63,10 +63,10 @@ namespace FFPRSaveEditor.Common
 
             byte[] decompressedJSONData = ms.ToArray();
 
-            return DeStringify(Encoding.UTF8.GetString(decompressedJSONData));
+            return DeStringify(Encoding.UTF8.GetString(decompressedJSONData), verify);
         }
 
-        private static string DeStringify(string jsonData) {
+        private static string DeStringify(string jsonData, bool verify) {
             // After decrypting the game file we have a JSON string where nearly all sub-objects are in "stringified" form
             // So here we will recursively expand any stringified sub-objects and array members to give a more "standard" JSON form
             var obj = JsonConvert.DeserializeObject<JObject>(jsonData);
@@ -75,15 +75,15 @@ namespace FFPRSaveEditor.Common
             // Serialize our newly-expanded JObject and store in the result variable
             string result = JsonConvert.SerializeObject(obj, Formatting.Indented);
 
-            if (Debugger.IsAttached) {
-                // I don't fully trust the de-stringification and re-stringification methods yet, so here we will re-stringify
-                // the de-stringified json, which if all is working well will yield a string that matches the original jsonData
-                // that was passed into this method.
+            if (verify) {
+                // If we're being asked to verify, we need to re-stringify the de-stringified json, which if all is working well
+                // will yield a string that matches the original jsonData that was passed into this method.
                 // If the string does not match, it may indicate an error in the de-stringification or re-stringification methods,
-                // which could result in the game crashing when the modified game file is used, so we throw an excetion to abort.
+                // or in one of the model classes (as happened with the FF3 companionEntity property at one point), which could
+                // result in the game crashing when the modified game file is used, so we throw an excetion to abort.
                 string reStringified = Stringify(result);
                 if (reStringified != jsonData) {
-                    throw new Exception("Re-stringified json does not match input jsonData");
+                    throw new InvalidDataException("Re-stringified json does not match input jsonData.");
                 }
 
                 // A second test of the de-stringification and re-stringification methods, which are working with game-specific classes.
@@ -122,7 +122,7 @@ namespace FFPRSaveEditor.Common
                         int break6 = 0;
                     }
                     if (!reStringifieds.Any(x => x == jsonData)) {
-                        throw new Exception("Re-stringified json does not match input jsonData");
+                        throw new InvalidDataException("Re-stringified json does not match input jsonData");
                     }
                 }
 
@@ -130,7 +130,7 @@ namespace FFPRSaveEditor.Common
                 try {
                     Encrypt(result);
                 } catch (Exception ex) {
-                    throw new Exception($"Error re-encrypting the decrypted json: {ex.Message}");
+                    throw new InvalidDataException($"Error re-encrypting the decrypted json: {ex.Message}");
                 }
             }
 

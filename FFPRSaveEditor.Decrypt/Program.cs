@@ -17,7 +17,7 @@ namespace FFPRSaveEditor.Decrypt
             try
             {
                 string jsonData = File.ReadAllText(args[0]);
-                jsonData = SaveGame.Decrypt(jsonData);
+                jsonData = SaveGame.Decrypt(jsonData, true);
                 File.WriteAllText(outputFilename, jsonData, System.Text.Encoding.UTF8);
                 Console.WriteLine($"Successfully decrypted {jsonData.Length} byte(s).");
                 Console.WriteLine($"Remember to backup your save game files!");
