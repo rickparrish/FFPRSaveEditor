@@ -1,0 +1,1959 @@
+{
+  "id": 22,
+  "pictureData": "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",
+  "userData": {
+    "corpsList": {
+      "target": [
+        {
+          "id": 1,
+          "characterId": 1
+        },
+        {
+          "id": 2,
+          "characterId": 2
+        },
+        {
+          "id": 1,
+          "characterId": 3
+        },
+        {
+          "id": 1,
+          "characterId": 0
+        }
+      ]
+    },
+    "corpsSlots": {
+      "keys": [
+        0,
+        1,
+        2
+      ],
+      "values": [
+        {
+          "target": [
+            {
+              "id": 1,
+              "characterId": 1
+            },
+            {
+              "id": 2,
+              "characterId": 2
+            },
+            {
+              "id": 1,
+              "characterId": 3
+            },
+            {
+              "id": 1,
+              "characterId": 0
+            }
+          ]
+        },
+        {
+          "target": [
+            {
+              "id": 1,
+              "characterId": 1
+            },
+            {
+              "id": 2,
+              "characterId": 2
+            },
+            {
+              "id": 1,
+              "characterId": 3
+            },
+            {
+              "id": 1,
+              "characterId": 0
+            }
+          ]
+        },
+        {
+          "target": [
+            {
+              "id": 1,
+              "characterId": 1
+            },
+            {
+              "id": 2,
+              "characterId": 2
+            },
+            {
+              "id": 1,
+              "characterId": 3
+            },
+            {
+              "id": 1,
+              "characterId": 0
+            }
+          ]
+        }
+      ]
+    },
+    "ownedCharacterList": {
+      "target": [
+        {
+          "id": 1,
+          "characterStatusId": 1,
+          "isEnableCorps": true,
+          "jobId": 1,
+          "name": "Firion",
+          "currentExp": 0,
+          "parameter": {
+            "currentHP": 30,
+            "currentMP": 10,
+            "currentMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalMaxMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalLevel": 1,
+            "addtionalMaxHp": 0,
+            "addtionalMaxMp": 0,
+            "addtionalPower": 0,
+            "addtionalVitality": 0,
+            "addtionalAgility": 0,
+            "addionalWeight": 0,
+            "addtionalIntelligence": 0,
+            "addtionalSpirit": 0,
+            "addtionalAttack": 0,
+            "addtionalDefense": 0,
+            "addtionalAbilityDefense": 0,
+            "addtionalAbilityEvasionRate": 0,
+            "addtionalMagic": 0,
+            "addtionalLuck": 0,
+            "addtionalAccuracyRate": 0,
+            "addtionalEvasionRate": 0,
+            "addtionalAbilityDisturbedRate": 0,
+            "addtionalCriticalRate": 0,
+            "addtionalDamageDirmeter": 0,
+            "addtionalAbilityDefenseRate": 0,
+            "addtionalAccuracyCount": 0,
+            "addtionalEvasionCount": 0,
+            "addtionalDefenseCount": 0,
+            "addtionalMagicDefenseCount": 0,
+            "currentConditionList": {
+              "target": []
+            }
+          },
+          "commandList": {
+            "target": [
+              1,
+              3,
+              4,
+              2,
+              5,
+              7
+            ]
+          },
+          "abilityList": {
+            "target": [
+              {
+                "abilityId": 711,
+                "contentId": 937,
+                "skillLevel": 0
+              }
+            ]
+          },
+          "abilitySlotDataList": {
+            "target": [
+              {
+                "level": 1,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 2,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 3,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 4,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 5,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 6,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 7,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 8,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              }
+            ]
+          },
+          "jobList": {
+            "target": [
+              {
+                "id": 1,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 2,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 3,
+                "level": 1,
+                "currentProficiency": 0
+              }
+            ]
+          },
+          "equipmentList": {
+            "keys": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "values": [
+              {
+                "contentId": 73,
+                "count": 1
+              },
+              {
+                "contentId": 102,
+                "count": 1
+              },
+              {
+                "contentId": 122,
+                "count": 1
+              },
+              {
+                "contentId": 210,
+                "count": 6
+              },
+              {
+                "contentId": 211,
+                "count": 6
+              }
+            ]
+          },
+          "additionOrderOwnedAbilityIds": {
+            "target": [
+              937
+            ]
+          },
+          "sortOrderOwnedAbilityIds": {
+            "target": []
+          },
+          "abilityDictionary": {
+            "keys": [],
+            "values": []
+          },
+          "skillLevelTargets": {
+            "keys": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "learningAbilitys": {
+            "target": []
+          },
+          "equipmentAbilitys": {
+            "target": [
+              0,
+              0,
+              0
+            ]
+          },
+          "numberOfButtles": 0,
+          "ownedMonsterId": 0,
+          "magicStoneId": 0,
+          "magicLearningValue": 0
+        },
+        {
+          "id": 2,
+          "characterStatusId": 2,
+          "isEnableCorps": true,
+          "jobId": 2,
+          "name": "Maria",
+          "currentExp": 0,
+          "parameter": {
+            "currentHP": 20,
+            "currentMP": 10,
+            "currentMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalMaxMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalLevel": 1,
+            "addtionalMaxHp": 0,
+            "addtionalMaxMp": 0,
+            "addtionalPower": 0,
+            "addtionalVitality": 0,
+            "addtionalAgility": 0,
+            "addionalWeight": 0,
+            "addtionalIntelligence": 0,
+            "addtionalSpirit": 0,
+            "addtionalAttack": 0,
+            "addtionalDefense": 0,
+            "addtionalAbilityDefense": 0,
+            "addtionalAbilityEvasionRate": 0,
+            "addtionalMagic": 0,
+            "addtionalLuck": 0,
+            "addtionalAccuracyRate": 0,
+            "addtionalEvasionRate": 0,
+            "addtionalAbilityDisturbedRate": 0,
+            "addtionalCriticalRate": 0,
+            "addtionalDamageDirmeter": 0,
+            "addtionalAbilityDefenseRate": 0,
+            "addtionalAccuracyCount": 0,
+            "addtionalEvasionCount": 0,
+            "addtionalDefenseCount": 0,
+            "addtionalMagicDefenseCount": 0,
+            "currentConditionList": {
+              "target": []
+            }
+          },
+          "commandList": {
+            "target": [
+              1,
+              3,
+              4,
+              2,
+              5,
+              7
+            ]
+          },
+          "abilityList": {
+            "target": [
+              {
+                "abilityId": 711,
+                "contentId": 937,
+                "skillLevel": 0
+              }
+            ]
+          },
+          "abilitySlotDataList": {
+            "target": [
+              {
+                "level": 1,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 2,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 3,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 4,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 5,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 6,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 7,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 8,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              }
+            ]
+          },
+          "jobList": {
+            "target": [
+              {
+                "id": 2,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 1,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 3,
+                "level": 1,
+                "currentProficiency": 0
+              }
+            ]
+          },
+          "equipmentList": {
+            "keys": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "values": [
+              {
+                "contentId": 94,
+                "count": 1
+              },
+              {
+                "contentId": 47,
+                "count": 6
+              },
+              {
+                "contentId": 121,
+                "count": 1
+              },
+              {
+                "contentId": 210,
+                "count": 7
+              },
+              {
+                "contentId": 211,
+                "count": 7
+              }
+            ]
+          },
+          "additionOrderOwnedAbilityIds": {
+            "target": [
+              937
+            ]
+          },
+          "sortOrderOwnedAbilityIds": {
+            "target": []
+          },
+          "abilityDictionary": {
+            "keys": [],
+            "values": []
+          },
+          "skillLevelTargets": {
+            "keys": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "learningAbilitys": {
+            "target": []
+          },
+          "equipmentAbilitys": {
+            "target": [
+              0,
+              0,
+              0
+            ]
+          },
+          "numberOfButtles": 0,
+          "ownedMonsterId": 0,
+          "magicStoneId": 0,
+          "magicLearningValue": 0
+        },
+        {
+          "id": 3,
+          "characterStatusId": 3,
+          "isEnableCorps": true,
+          "jobId": 3,
+          "name": "Guy",
+          "currentExp": 0,
+          "parameter": {
+            "currentHP": 40,
+            "currentMP": 10,
+            "currentMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalMaxMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalLevel": 1,
+            "addtionalMaxHp": 0,
+            "addtionalMaxMp": 0,
+            "addtionalPower": 0,
+            "addtionalVitality": 0,
+            "addtionalAgility": 0,
+            "addionalWeight": 0,
+            "addtionalIntelligence": 0,
+            "addtionalSpirit": 0,
+            "addtionalAttack": 0,
+            "addtionalDefense": 0,
+            "addtionalAbilityDefense": 0,
+            "addtionalAbilityEvasionRate": 0,
+            "addtionalMagic": 0,
+            "addtionalLuck": 0,
+            "addtionalAccuracyRate": 0,
+            "addtionalEvasionRate": 0,
+            "addtionalAbilityDisturbedRate": 0,
+            "addtionalCriticalRate": 0,
+            "addtionalDamageDirmeter": 0,
+            "addtionalAbilityDefenseRate": 0,
+            "addtionalAccuracyCount": 0,
+            "addtionalEvasionCount": 0,
+            "addtionalDefenseCount": 0,
+            "addtionalMagicDefenseCount": 0,
+            "currentConditionList": {
+              "target": []
+            }
+          },
+          "commandList": {
+            "target": [
+              1,
+              3,
+              4,
+              2,
+              5,
+              7
+            ]
+          },
+          "abilityList": {
+            "target": [
+              {
+                "abilityId": 711,
+                "contentId": 937,
+                "skillLevel": 0
+              }
+            ]
+          },
+          "abilitySlotDataList": {
+            "target": [
+              {
+                "level": 1,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 2,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 3,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 4,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 5,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 6,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 7,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 8,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              }
+            ]
+          },
+          "jobList": {
+            "target": [
+              {
+                "id": 3,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 1,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 2,
+                "level": 1,
+                "currentProficiency": 0
+              }
+            ]
+          },
+          "equipmentList": {
+            "keys": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "values": [
+              {
+                "contentId": 87,
+                "count": 1
+              },
+              {
+                "contentId": 47,
+                "count": 7
+              },
+              {
+                "contentId": 122,
+                "count": 2
+              },
+              {
+                "contentId": 210,
+                "count": 8
+              },
+              {
+                "contentId": 211,
+                "count": 8
+              }
+            ]
+          },
+          "additionOrderOwnedAbilityIds": {
+            "target": [
+              937
+            ]
+          },
+          "sortOrderOwnedAbilityIds": {
+            "target": []
+          },
+          "abilityDictionary": {
+            "keys": [],
+            "values": []
+          },
+          "skillLevelTargets": {
+            "keys": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "learningAbilitys": {
+            "target": []
+          },
+          "equipmentAbilitys": {
+            "target": [
+              0,
+              0,
+              0
+            ]
+          },
+          "numberOfButtles": 0,
+          "ownedMonsterId": 0,
+          "magicStoneId": 0,
+          "magicLearningValue": 0
+        },
+        {
+          "id": 4,
+          "characterStatusId": 10,
+          "isEnableCorps": false,
+          "jobId": 9,
+          "name": "Leon",
+          "currentExp": 0,
+          "parameter": {
+            "currentHP": 30,
+            "currentMP": 5,
+            "currentMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalMaxMpCountList": {
+              "keys": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "values": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "addtionalLevel": 1,
+            "addtionalMaxHp": 0,
+            "addtionalMaxMp": 0,
+            "addtionalPower": 0,
+            "addtionalVitality": 0,
+            "addtionalAgility": 0,
+            "addionalWeight": 0,
+            "addtionalIntelligence": 0,
+            "addtionalSpirit": 0,
+            "addtionalAttack": 0,
+            "addtionalDefense": 0,
+            "addtionalAbilityDefense": 0,
+            "addtionalAbilityEvasionRate": 0,
+            "addtionalMagic": 0,
+            "addtionalLuck": 0,
+            "addtionalAccuracyRate": 0,
+            "addtionalEvasionRate": 0,
+            "addtionalAbilityDisturbedRate": 0,
+            "addtionalCriticalRate": 0,
+            "addtionalDamageDirmeter": 0,
+            "addtionalAbilityDefenseRate": 0,
+            "addtionalAccuracyCount": 0,
+            "addtionalEvasionCount": 0,
+            "addtionalDefenseCount": 0,
+            "addtionalMagicDefenseCount": 0,
+            "currentConditionList": {
+              "target": []
+            }
+          },
+          "commandList": {
+            "target": [
+              1,
+              3,
+              4,
+              2,
+              5,
+              7
+            ]
+          },
+          "abilityList": {
+            "target": [
+              {
+                "abilityId": 711,
+                "contentId": 937,
+                "skillLevel": 0
+              }
+            ]
+          },
+          "abilitySlotDataList": {
+            "target": [
+              {
+                "level": 1,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 2,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 3,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 4,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 5,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 6,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 7,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              },
+              {
+                "level": 8,
+                "slotInfo": {
+                  "keys": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "values": [
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              }
+            ]
+          },
+          "jobList": {
+            "target": [
+              {
+                "id": 9,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 1,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 2,
+                "level": 1,
+                "currentProficiency": 0
+              },
+              {
+                "id": 3,
+                "level": 1,
+                "currentProficiency": 0
+              }
+            ]
+          },
+          "equipmentList": {
+            "keys": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "values": [
+              {
+                "contentId": 47,
+                "count": 7
+              },
+              {
+                "contentId": 47,
+                "count": 7
+              },
+              {
+                "contentId": 209,
+                "count": 5
+              },
+              {
+                "contentId": 210,
+                "count": 9
+              },
+              {
+                "contentId": 211,
+                "count": 9
+              }
+            ]
+          },
+          "additionOrderOwnedAbilityIds": {
+            "target": [
+              937
+            ]
+          },
+          "sortOrderOwnedAbilityIds": {
+            "target": []
+          },
+          "abilityDictionary": {
+            "keys": [],
+            "values": []
+          },
+          "skillLevelTargets": {
+            "keys": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "learningAbilitys": {
+            "target": []
+          },
+          "equipmentAbilitys": {
+            "target": [
+              0,
+              0,
+              0
+            ]
+          },
+          "numberOfButtles": 0,
+          "ownedMonsterId": 0,
+          "magicStoneId": 0,
+          "magicLearningValue": 0
+        }
+      ]
+    },
+    "releasedJobs": {
+      "target": [
+        1,
+        2,
+        3
+      ]
+    },
+    "owendGil": 400,
+    "playTime": 169.01437197811902,
+    "normalOwnedItemList": {
+      "target": [
+        {
+          "contentId": 47,
+          "count": 7
+        },
+        {
+          "contentId": 208,
+          "count": 5
+        },
+        {
+          "contentId": 209,
+          "count": 5
+        },
+        {
+          "contentId": 210,
+          "count": 9
+        },
+        {
+          "contentId": 211,
+          "count": 9
+        },
+        {
+          "contentId": 73,
+          "count": 2
+        },
+        {
+          "contentId": 102,
+          "count": 2
+        },
+        {
+          "contentId": 122,
+          "count": 3
+        },
+        {
+          "contentId": 94,
+          "count": 1
+        },
+        {
+          "contentId": 121,
+          "count": 1
+        },
+        {
+          "contentId": 87,
+          "count": 1
+        }
+      ]
+    },
+    "importantOwendItemList": {
+      "target": []
+    },
+    "normalOwnedItemSortIdList": {
+      "target": []
+    },
+    "currentArea": "MSG_MAP_NAME_01",
+    "currentLocation": "MSG_MAP_NAME_11",
+    "ownedTransportationList": {
+      "target": [
+        {
+          "position": {
+            "x": 1000.0,
+            "y": 1000.0,
+            "z": -1000.0
+          },
+          "direction": 0,
+          "id": 1,
+          "mapId": -1,
+          "enable": false,
+          "timeStampTicks": 0
+        },
+        {
+          "position": {
+            "x": 1000.0,
+            "y": 1000.0,
+            "z": 0.0
+          },
+          "direction": 4,
+          "id": 2,
+          "mapId": -1,
+          "enable": false,
+          "timeStampTicks": 0
+        },
+        {
+          "position": {
+            "x": 1000.0,
+            "y": 1000.0,
+            "z": 0.0
+          },
+          "direction": 4,
+          "id": 3,
+          "mapId": -1,
+          "enable": false,
+          "timeStampTicks": 0
+        },
+        {
+          "position": {
+            "x": 1000.0,
+            "y": 1000.0,
+            "z": 0.0
+          },
+          "direction": 4,
+          "id": 4,
+          "mapId": -1,
+          "enable": false,
+          "timeStampTicks": 0
+        },
+        {
+          "position": {
+            "x": 1000.0,
+            "y": 1000.0,
+            "z": 0.0
+          },
+          "direction": 4,
+          "id": 5,
+          "mapId": -1,
+          "enable": false,
+          "timeStampTicks": 0
+        },
+        {
+          "position": {
+            "x": 1000.0,
+            "y": 1000.0,
+            "z": 0.0
+          },
+          "direction": 4,
+          "id": 6,
+          "mapId": -1,
+          "enable": false,
+          "timeStampTicks": 0
+        },
+        {
+          "position": {
+            "x": 1000.0,
+            "y": 1000.0,
+            "z": 0.0
+          },
+          "direction": 4,
+          "id": 7,
+          "mapId": -1,
+          "enable": false,
+          "timeStampTicks": 0
+        }
+      ]
+    },
+    "owendCrystalFlags": {
+      "target": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "configData": "",
+    "warehouseItemList": {
+      "target": []
+    },
+    "ownedKeyWaordList": {
+      "target": []
+    },
+    "ownedMagicList": {
+      "target": []
+    },
+    "learnedAbilityList": {
+      "target": [
+        711
+      ]
+    },
+    "escapeCount": 0,
+    "battleCount": 0,
+    "corpsSlotIndex": 0,
+    "openChestCount": 0,
+    "ownedMagicStoneList": {
+      "target": []
+    },
+    "steps": 0,
+    "saveCompleteCount": 0,
+    "monstersKilledCount": 0
+  },
+  "configData": {
+    "buttonType": 2,
+    "battleModeIndex": 0,
+    "battleSpeedIndex": 2,
+    "battleMessageSpeedIndex": 2,
+    "isCursorMemory": false,
+    "isKeepAutoBattle": false,
+    "messageSpeed": 2,
+    "brightness": 50.0,
+    "masterVolume": 100.0,
+    "bgmVolume": 5.0,
+    "seVolume": 5.0,
+    "isLeftActionIcon": false,
+    "isLeftVirtualPad": true,
+    "isLeftMenuCommand": false,
+    "isLeftBattleCommand": true,
+    "reequipIndex": 0,
+    "analogModeIndex": 0
+  },
+  "dataStorage": {
+    "scenario": [
+      1,
+      0,
+      0,
+      288,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "treasure": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "global": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "area": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "map": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "selected": 3,
+    "itemSelected": 0,
+    "transportation": []
+  },
+  "mapData": {
+    "mapId": 6,
+    "pointIn": -1,
+    "transportationId": 1,
+    "carryingHoverShip": false,
+    "playerEntity": {
+      "position": {
+        "x": 11.0,
+        "y": 9.0,
+        "z": 349.0
+      },
+      "direction": 1
+    },
+    "companionEntity": "",
+    "gpsData": {
+      "mapId": 1,
+      "areaId": 2,
+      "gpsId": 1,
+      "width": 256,
+      "height": 256
+    },
+    "moveCount": 0,
+    "subtractSteps": 75,
+    "telepoCacheData": "",
+    "playableCharacterCorpsId": 0,
+    "timerData": ""
+  },
+  "timeStamp": "7/28/2023 2:36:05 PM",
+  "playTime": 0.0,
+  "clearFlag": 0,
+  "isCompleteFlag": 0
+}

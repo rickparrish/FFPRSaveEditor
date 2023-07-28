@@ -87,41 +87,10 @@ namespace FFPRSaveEditor.Common
                 }
 
                 // A second test of the de-stringification and re-stringification methods, which are working with game-specific classes.
-                // Since we don't know what game the data is coming from, we parse with each in a try..catch to ignore exceptions related
-                // to mismatches (ie loading a FF1 save into a FF6 class)
                 if (jsonData.Contains("userData", StringComparison.OrdinalIgnoreCase)) {
-                    var reStringifieds = new List<string>();
-                    try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF1SaveGame>(result))));
-                    } catch (Exception ex) {
-                        int break1 = 0;
-                    }
-                    try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF2SaveGame>(result))));
-                    } catch (Exception ex) {
-                        int break2 = 0;
-                    }
-                    try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF3SaveGame>(result))));
-                    } catch (Exception ex) {
-                        int break3 = 0;
-                    }
-                    try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF4SaveGame>(result))));
-                    } catch (Exception ex) {
-                        int break4 = 0;
-                    }
-                    try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF5SaveGame>(result))));
-                    } catch (Exception ex) {
-                        int break5 = 0;
-                    }
-                    try {
-                        reStringifieds.Add(Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject<FF6SaveGame>(result))));
-                    } catch (Exception ex) {
-                        int break6 = 0;
-                    }
-                    if (!reStringifieds.Any(x => x == jsonData)) {
+                    Type saveType = Type.GetType($"FF{DetectVersion(result)}SaveGame");
+                    reStringified = Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject(result, saveType)));
+                    if (reStringified != jsonData) {
                         throw new InvalidDataException("Re-stringified json does not match input jsonData");
                     }
                 }
@@ -135,6 +104,44 @@ namespace FFPRSaveEditor.Common
             }
 
             return result;
+        }
+
+        public static int DetectVersion(string jsonData) {
+            var obj = JsonConvert.DeserializeObject<BaseSaveGame2>(jsonData);
+            string ownedTransportationList = string.Join(",", obj.userData.ownedTransportationList.target.Select(x => x.id).OrderBy(x => x));
+
+            if (jsonData.Contains("currentSelectedPartyId")) {
+                if (ownedTransportationList == "1,2,3,4,5,6,7,8") {
+                    return 6;
+                } else {
+                    throw new InvalidDataException("Version detection saw FF6 with an unknown ownedTransportationList");
+                }
+            } else if (jsonData.Contains("wonderWandIndex")) {
+                if (ownedTransportationList == "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20") {
+                    return 5;
+                } else {
+                    throw new InvalidDataException("Version detection saw FF5 with an unknown ownedTransportationList");
+                }
+            } else if (jsonData.Contains("totalGil")) {
+                if (ownedTransportationList == "1,2,3,4,5,6,7,8,9,10,11") {
+                    return 4;
+                } else {
+                    throw new InvalidDataException("Version detection saw FF4 with an unknown ownedTransportationList");
+                }
+            } else if (jsonData.Contains("viewType")) {
+                if (ownedTransportationList == "1,2,3,5,6,8,9,10,11,12,13,14,15,16") {
+                    return 3;
+                } else {
+                    throw new InvalidDataException("Version detection saw FF3 with an unknown ownedTransportationList");
+                }
+            } else if (ownedTransportationList == "1,2,3,4,5,6,7") {
+                return 2;
+            } else if (ownedTransportationList == "1,2,3,4") {
+                return 1;
+            }
+
+            // If we get here version detection failed
+            throw new InvalidDataException("Version detection failed");
         }
 
         public static string Encrypt(string jsonData)
