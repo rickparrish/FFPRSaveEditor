@@ -88,9 +88,11 @@ namespace FFPRSaveEditor.Common
 
                 // A second test of the de-stringification and re-stringification methods, which are working with game-specific classes.
                 if (jsonData.Contains("userData", StringComparison.OrdinalIgnoreCase)) {
-                    Type saveType = Type.GetType($"FF{DetectVersion(result)}SaveGame");
-                    reStringified = Stringify(JsonConvert.SerializeObject(JsonConvert.DeserializeObject(result, saveType)));
-                    if (reStringified != jsonData) {
+                    Type testType = GetSaveType(result);
+                    var testObj = JsonConvert.DeserializeObject(result, testType);
+                    string testJson = JsonConvert.SerializeObject(testObj);
+                    string testStringified = Stringify(testJson);
+                    if (testStringified != jsonData) {
                         throw new InvalidDataException("Re-stringified json does not match input jsonData");
                     }
                 }
@@ -106,8 +108,8 @@ namespace FFPRSaveEditor.Common
             return result;
         }
 
-        public static int DetectVersion(string jsonData) {
-            var obj = JsonConvert.DeserializeObject<BaseSaveGame2>(jsonData);
+        private static int DetectVersion(string jsonData) {
+            var obj = JsonConvert.DeserializeObject<BaseSaveGame>(jsonData);
             string ownedTransportationList = string.Join(",", obj.userData.ownedTransportationList.target.Select(x => x.id).OrderBy(x => x));
 
             if (jsonData.Contains("currentSelectedPartyId")) {
@@ -191,6 +193,22 @@ namespace FFPRSaveEditor.Common
             return Convert.ToBase64String(encryptedJSONData, 0, bytesProcessed);
         }
 
+        private static Type GetSaveType(string json) {
+            string saveTypeName = $"FFPRSaveEditor.Common.Models.FF{DetectVersion(json)}SaveGame";
+            Type saveType = Type.GetType(saveTypeName);
+            if (saveType == null) {
+                throw new InvalidDataException($"Unable to load type '{saveTypeName}'");
+            }
+
+            return saveType;
+        }
+
+        public static BaseSaveGame Load(string filename, bool verify) {
+            string encryptedData = File.ReadAllText(filename);
+            string jsonData = Decrypt(encryptedData, verify);
+            return (BaseSaveGame)JsonConvert.DeserializeObject(jsonData, GetSaveType(jsonData));
+        }
+
         private static void RecursivelyDeStringify(JObject obj) {
             // Loop through each property in the given JObject, and expand any properties or array members
             // that appear to be stringified objects.
@@ -250,6 +268,12 @@ namespace FFPRSaveEditor.Common
                     }
                 }
             }
+        }
+
+        public static void Save(string filename, BaseSaveGame save) {
+            string jsonData = JsonConvert.SerializeObject(save);
+            string encryptedData = Encrypt(jsonData);
+            File.WriteAllText(filename, encryptedData);
         }
 
         private static string Stringify(string jsonData) {
