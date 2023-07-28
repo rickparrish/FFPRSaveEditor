@@ -63,23 +63,10 @@
     public class BaseSaveGame {
         public virtual int id { get; set; }
         public virtual string pictureData { get; set; }
-        // public virtual UserData userData { get; set; }
-        public virtual ConfigData configData { get; set; }
-        public virtual DataStorage dataStorage { get; set; }
-        // public virtual MapData mapData { get; set; }
-        public virtual string timeStamp { get; set; }
-        public virtual decimal playTime { get; set; }
-        public virtual int clearFlag { get; set; }
-        public virtual int isCompleteFlag { get; set; }
-    }
-
-    public class BaseSaveGame2 {
-        public virtual int id { get; set; }
-        public virtual string pictureData { get; set; }
         public virtual UserData userData { get; set; }
         public virtual ConfigData configData { get; set; }
         public virtual DataStorage dataStorage { get; set; }
-        public virtual MapData2 mapData { get; set; }
+        public virtual MapData mapData { get; set; }
         public virtual string timeStamp { get; set; }
         public virtual decimal playTime { get; set; }
         public virtual int clearFlag { get; set; }
@@ -216,7 +203,7 @@
         //       coming up in one of my saves.  So for now object is used instead of CompanionEntity to
         //       ensure things deserialize for all games.
         public virtual object companionEntity { get; set; }
-        // public virtual GpsData gpsData { get; set; }
+        public virtual GpsData gpsData { get; set; }
         public virtual int moveCount { get; set; }
         public virtual int subtractSteps { get; set; }
         public virtual string telepoCacheData { get; set; }
@@ -224,25 +211,6 @@
         // TODOX In FF5 the timerData property is a TimerData, but for all other games it is an empty string.
         //       So for now object is used to ensure things deserialize for all games, but it means hoops will
         //       need to be jumped through to edit timer data (whatever it is) in FF5.
-        public virtual object timerData { get; set; }
-    }
-
-    public class MapData2 {
-        public virtual int mapId { get; set; }
-        public virtual int pointIn { get; set; }
-        public virtual int transportationId { get; set; }
-        public virtual bool carryingHoverShip { get; set; }
-        public virtual PlayerEntity playerEntity { get; set; }
-        // TODOX In most of my saves companionEntity is an empty string, but in one of my FF3 saves it
-        //       is an object.  I think this is from when you're escorting an NPC, which is why it's only
-        //       coming up in one of my saves.  So for now object is used instead of CompanionEntity to
-        //       ensure things deserialize for all games.
-        public virtual object companionEntity { get; set; }
-        public virtual GpsData gpsData { get; set; }
-        public virtual int moveCount { get; set; }
-        public virtual int subtractSteps { get; set; }
-        public virtual string telepoCacheData { get; set; }
-        public virtual int playableCharacterCorpsId { get; set; }
         public virtual object timerData { get; set; }
     }
 

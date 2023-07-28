@@ -1,5 +1,5 @@
 ﻿namespace FFPRSaveEditor.Common.Models {
-    // Compared to BaseModel.GpsData: Add transportationId property
+    // Compared to BaseModel.GpsData: Add new transportationId property
     public class FF6GpsData : GpsData {
         public int transportationId { get; set; }
         public override int mapId { get; set; }
@@ -9,7 +9,7 @@
         public override int height { get; set; }
     }
 
-    // Compared to BaseModel.MapData: Add gpsData, currentSelectedPartyId, viewType, otherPartyDataList, partyPlayableCharacterCorpsId,
+    // Compared to BaseModel.MapData: Add custom gpsData and new currentSelectedPartyId, viewType, otherPartyDataList, partyPlayableCharacterCorpsId,
     //                                    fieldDefenseNpcEntityIDList, beastFieldEncountExchangeFlags, beastFieldEncountSeekGroupId, rtsData properties
     public class FF6MapData : MapData {
         public override int mapId { get; set; }
@@ -18,7 +18,7 @@
         public override bool carryingHoverShip { get; set; }
         public override PlayerEntity playerEntity { get; set; }
         public override object companionEntity { get; set; }
-        public FF6GpsData gpsData { get; set; }
+        public new FF6GpsData gpsData { get; set; }
         public override int moveCount { get; set; }
         public override int subtractSteps { get; set; }
         public override string telepoCacheData { get; set; }
@@ -43,21 +43,21 @@
         public int playableCharacterCorpsId { get; set; }
     }
 
-    // Compared to BaseModel.SaveGame: Add userData and mapData properties
+    // Compared to BaseModel.SaveGame: Add custom userData and mapData properties
     public class FF6SaveGame : BaseSaveGame {
         public override int id { get; set; }
         public override string pictureData { get; set; }
-        public FF6UserData userData { get; set; }
+        public new FF6UserData userData { get; set; }
         public override ConfigData configData { get; set; }
         public override DataStorage dataStorage { get; set; }
-        public FF6MapData mapData { get; set; }
+        public new FF6MapData mapData { get; set; }
         public override string timeStamp { get; set; }
         public override decimal playTime { get; set; }
         public override int clearFlag { get; set; }
         public override int isCompleteFlag { get; set; }
     }
 
-    // Compared to BaseModel.UserData: Add totalGil property
+    // Compared to BaseModel.UserData: Add new totalGil property
     public class FF6UserData : UserData {
         public override CorpsList corpsList { get; set; }
         public override CorpsSlots corpsSlots { get; set; }
