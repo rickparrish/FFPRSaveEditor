@@ -1,4 +1,6 @@
-﻿namespace FFPRSaveEditor.Common.Models {
+﻿using System.Runtime.Serialization;
+
+namespace FFPRSaveEditor.Common.Models {
     // Compared to BaseModel.GpsData: Add new transportationId property
     public class FF6GpsData : GpsData {
         public int transportationId { get; set; }
@@ -33,6 +35,10 @@
         public int beastFieldEncountSeekGroupId { get; set; }
         public string rtsData { get; set; }
 
+        [OnDeserialized]
+        internal void OnDeserializedMethod(StreamingContext context) {
+            base.gpsData = gpsData;
+        }
     }
 
     // New class for FF6
@@ -55,6 +61,12 @@
         public override decimal playTime { get; set; }
         public override int clearFlag { get; set; }
         public override int isCompleteFlag { get; set; }
+
+        [OnDeserialized]
+        internal void OnDeserializedMethod(StreamingContext context) {
+            base.userData = userData;
+            base.mapData = mapData;
+        }
     }
 
     // Compared to BaseModel.UserData: Add new totalGil property

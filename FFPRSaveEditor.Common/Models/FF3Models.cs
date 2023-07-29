@@ -1,4 +1,6 @@
-﻿namespace FFPRSaveEditor.Common.Models {
+﻿using System.Runtime.Serialization;
+
+namespace FFPRSaveEditor.Common.Models {
     // Compared to BaseModel.GpsData: Add new transportationId property
     public class FF3GpsData : GpsData {
         public int transportationId { get; set; }
@@ -24,6 +26,11 @@
         public override int playableCharacterCorpsId { get; set; }
         public override object timerData { get; set; }
         public int viewType { get; set; }
+
+        [OnDeserialized]
+        internal void OnDeserializedMethod(StreamingContext context) {
+            base.gpsData = gpsData;
+        }
     }
 
     // Compared to BaseModel.SaveGame: Add custom mapData property
@@ -38,5 +45,10 @@
         public override decimal playTime { get; set; }
         public override int clearFlag { get; set; }
         public override int isCompleteFlag { get; set; }
+
+        [OnDeserialized]
+        internal void OnDeserializedMethod(StreamingContext context) {
+            base.mapData = mapData;
+        }
     }
 }

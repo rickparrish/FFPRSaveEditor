@@ -1,4 +1,6 @@
-﻿namespace FFPRSaveEditor.Common.Models {
+﻿using System.Runtime.Serialization;
+
+namespace FFPRSaveEditor.Common.Models {
     // Compared to BaseModel.MapData: Add custom gpsData and new viewType properties
     public class FF5MapData : MapData {
         public override int mapId { get; set; }
@@ -40,6 +42,12 @@
         public override decimal playTime { get; set; }
         public override int clearFlag { get; set; }
         public override int isCompleteFlag { get; set; }
+
+        [OnDeserialized]
+        internal void OnDeserializedMethod(StreamingContext context) {
+            base.userData = userData;
+            base.mapData = mapData;
+        }
     }
 
     // Compared to BaseModel.UserData: Add new winCount, totalGil, wonderWandIndex, braveBladeReliefCount,
