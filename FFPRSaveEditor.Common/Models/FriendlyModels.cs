@@ -4,6 +4,16 @@ using System.Drawing;
 namespace FFPRSaveEditor.Common.Models {
     public partial class BaseSaveGame {
         /// <summary>
+        /// FF5: Used to add magical abilities (black, blue, white, summon, etc) by adding the `AbilityId` to this list.
+        /// </summary>
+        [JsonIgnore]
+        public List<int> Abilities {
+            get {
+                return userData.learnedAbilityList.target;
+            }
+        }
+
+        /// <summary>
         /// A list of characters.  Filter to `IsInParty` for current party members, or use alternative `PartyMembers` property.
         /// </summary>
         [JsonIgnore]
@@ -67,21 +77,11 @@ namespace FFPRSaveEditor.Common.Models {
         }
 
         /// <summary>
-        /// FF5: Used to add magical abilities (black, blue, white, summon, etc) by adding the `AbilityId` to this list.
-        /// </summary>
-        [JsonIgnore]
-        public List<int> LearnedAbilities {
-            get {
-                return userData.learnedAbilityList.target;
-            }
-        }
-
-        /// <summary>
         /// FF5: Used to add magical abilities (black, blue, white, summon, etc) by adding the `ContentId` to this list.
         /// NB:  Only seems to be used in FF5 and FF6
         /// </summary>
         [JsonIgnore]
-        public List<int> LearnedMagics {
+        public List<int> Magics {
             get {
                 return userData.ownedMagicList.target;
             }
@@ -171,6 +171,29 @@ namespace FFPRSaveEditor.Common.Models {
     }
 
     public partial class OwnedCharacterList_Target {
+        /// <summary>
+        /// FF5: Used to add magical abilities to a player (black, blue, white, summon, etc) by adding the class to this list.
+        /// </summary>
+        [JsonIgnore]
+        public List<AbilityList_Target> Abilities {
+            get {
+                return abilityList.target;
+            }
+        }
+
+        /// <summary>
+        /// FF5: Used to add magical abilities to a player (black, blue, white, summon, etc) by adding the `ContentId` to this list.
+        /// NB:  It accesses a property called additionOrderOwnedAbilityIds, implying it contains a list of `AbilityId`, but observing
+        ///      the behaviour of learning magic in FF5 showed that it is actually `ContentId` values that are stored here, hence why
+        ///      the extension property name is AbilityContentIds.
+        /// </summary>
+        [JsonIgnore]
+        public List<int> AbilityContentIds {
+            get {
+                return additionOrderOwnedAbilityIds.target;
+            }
+        }
+
         /// <summary>
         /// NB: Only appears to be used in FF1.
         /// </summary>
@@ -265,25 +288,12 @@ namespace FFPRSaveEditor.Common.Models {
         }
 
         /// <summary>
-        /// FF5: Used to add magical abilities to a player (black, blue, white, summon, etc) by adding the class to this list.
+        /// FF5: Used to add jobs to a player, or edit jobs they have already learned.
         /// </summary>
         [JsonIgnore]
-        public List<AbilityList_Target> LearnedAbilities {
+        public List<JobList_Target> Jobs {
             get {
-                return abilityList.target;
-            }
-        }
-
-        /// <summary>
-        /// FF5: Used to add magical abilities to a player (black, blue, white, summon, etc) by adding the `ContentId` to this list.
-        /// NB:  It accesses a property called additionOrderOwnedAbilityIds, implying it contains a list of `AbilityId`, but observing
-        ///      the behaviour of learning magic in FF5 showed that it is actually `ContentId` values that are stored here, hence why
-        ///      the extension property name is LearnedContentIds.
-        /// </summary>
-        [JsonIgnore]
-        public List<int> LearnedContentIds {
-            get {
-                return additionOrderOwnedAbilityIds.target;
+                return jobList.target;
             }
         }
 
@@ -291,22 +301,12 @@ namespace FFPRSaveEditor.Common.Models {
         /// FF5: Used to add job abilities to a player by adding the `ContentId` to this list.
         /// NB:  It accesses a property called learningAbilitys, implying it contains a list of `AbilityId`, but observing
         ///      the behaviour of learning job abilities in FF5 showed that it is actually `ContentId` values that are stored here, hence why
-        ///      the extension property name is LearningContentIds.
+        ///      the extension property name is JobAbilityContentIds.
         /// </summary>
         [JsonIgnore]
-        public List<int> LearningContentIds {
+        public List<int> JobAbilityContentIds {
             get {
                 return learningAbilitys.target;
-            }
-        }
-
-        /// <summary>
-        /// FF5: Used to add jobs to a player, or edit jobs they have already learned.
-        /// </summary>
-        [JsonIgnore]
-        public List<JobList_Target> LearnedJobs {
-            get {
-                return jobList.target;
             }
         }
 
