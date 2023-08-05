@@ -60,7 +60,7 @@
         public List<int> values { get; set; }
     }
 
-    public class BaseSaveGame {
+    public partial class BaseSaveGame {
         public virtual int id { get; set; }
         public virtual string pictureData { get; set; }
         public virtual UserData userData { get; set; }
@@ -230,7 +230,7 @@
         public List<OwnedCharacterList_Target> target { get; set; }
     }
 
-    public class OwnedCharacterList_Target {
+    public partial class OwnedCharacterList_Target {
         public int id { get; set; }
         public int characterStatusId { get; set; }
         public bool isEnableCorps { get; set; }
